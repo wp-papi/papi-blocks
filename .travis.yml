@@ -1,0 +1,11 @@
+language: node
+
+sudo: false
+
+cache: npm
+
+install:
+  - npm install
+
+script:
+  - npm run lint
