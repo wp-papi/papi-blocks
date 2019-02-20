@@ -16,6 +16,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+    require_once __DIR__ . '/vendor/autoload.php';
+}
+
 /**
  * Boostrap plugin.
  */
@@ -24,5 +28,11 @@ add_action( 'plugins_loaded', function () {
 		return;
 	}
 
-	require_once plugin_dir_path( __FILE__ ) . 'src/init.php';
+	if ( ! function_exists( 'papi' ) ) {
+		return;
+	}
+
+	require_once plugin_dir_path( __FILE__ ) . 'src/class-papi-blocks-loader.php';
+
+	return Papi_Blocks_Loader::instance();
 } );
