@@ -1,0 +1,41 @@
+{
+	"name": "wp-papi/papi-blocks",
+	"type": "wordpress-plugin",
+	"license": "MIT",
+	"description": "Papi blocks for Gutenberg",
+	"homepage": "https://wp-papi.github.io",
+	"authors": [{
+	  "name": "Fredrik Forsmo",
+	  "email": "fredrik.forsmo@gmail.com",
+	  "homepage": "https://frozzare.com"
+	}],
+	"keywords": [
+	  "wordpress",
+	  "custom fields",
+	  "page type",
+	  "page",
+	  "taxonomy",
+	  "options",
+	  "blocks",
+	  "gutenberg"
+	],
+	"require": {
+	  "php": "^5.6 || ^7.0"
+	},
+	"require-dev": {
+	  "frozzare/wp-test-suite": "^1.0",
+	  "wp-coding-standards/wpcs": "^0.13"
+	},
+	"scripts": {
+	  "lint": "vendor/bin/phpcs -s --extensions=php --standard=phpcs.xml src/",
+	  "post-install-cmd": "if [ -f vendor/bin/phpcs ]; then \"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs; fi",
+	  "post-update-cmd": "if [ -f vendor/bin/phpcs ]; then \"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs; fi"
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"extra": {
+	  "branch-alias": {
+		"dev-master": "1.0.x-dev"
+	  }
+	}
+  }

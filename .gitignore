@@ -1,4 +1,6 @@
+composer.lock
 node_modules
+vendor
 
 ## Uncomment line below if you prefer to
 ## keep compiled files out of version control
