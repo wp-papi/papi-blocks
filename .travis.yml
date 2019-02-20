@@ -1,11 +1,13 @@
-language: node
-
-sudo: false
-
-cache: npm
-
-install:
-  - npm install
-
-script:
-  - npm run lint
+matrix:
+  include:
+    - language: node
+    cache: npm
+    install:
+      - npm install
+    script:
+      - npm run lint
+    - language: php
+    install:
+      - composer install --no-interaction --prefer-source
+    script:
+      - composer run lint
