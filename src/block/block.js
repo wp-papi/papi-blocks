@@ -56,8 +56,7 @@ const registerBox = box => {
 };
 
 domReady(() => {
-	// Fetch entry type value. Query selector name needs to be dynamic... (see papi_get_page_type_key function).
-	const entryType = document.querySelector('[name=_papi_page_type]');
+	const entryType = document.querySelector('[data-papi-page-type-key]');
 
 	if (!entryType) {
 		return;
