@@ -10,7 +10,10 @@
     "start": "cgb-scripts start"
   },
   "dependencies": {
+    "@wordpress/api-fetch": "^2.2.8",
+    "@wordpress/dom-ready": "^2.0.2",
     "cgb-scripts": "1.15.0",
+    "dompurify": "^1.0.10",
     "prettier-semistandard": "^0.1.1",
     "semistandard": "*"
   },
