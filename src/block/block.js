@@ -3,6 +3,7 @@ import './editor.scss';
 import DOMPurify from 'dompurify';
 import apiFetch from '@wordpress/api-fetch';
 import domReady from '@wordpress/dom-ready';
+import DangerousHTML from 'react-dangerous-html';
 
 const { registerBlockType } = wp.blocks;
 
@@ -32,7 +33,7 @@ const registerBox = box => {
 			return (
 				<div className={ props.className }>
 					<h2>{box.title}</h2>
-					<div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(box.html) }}></div>
+					<DangerousHTML html={box.html} />
 				</div>
 			);
 		},
