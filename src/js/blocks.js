@@ -1,11 +1,10 @@
-import './style.scss';
-import './editor.scss';
 import DOMPurify from 'dompurify';
 import apiFetch from '@wordpress/api-fetch';
 import domReady from '@wordpress/dom-ready';
 import DangerousHTML from 'react-dangerous-html';
 
 const { registerBlockType } = wp.blocks;
+const { withDispatch } = wp.data;
 
 /**
  * Register block.
@@ -23,7 +22,7 @@ const registerBlock = block => {
 	 *
 	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
 	 */
-	settings.edit = (props) => {
+	settings.edit = function (props) {
 		return (
 			<div className={ props.className }>
 				<h2>{block.title}</h2>
@@ -41,11 +40,7 @@ const registerBlock = block => {
 	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
 	 */
 	settings.save = (props) => {
-		return (
-			<div>
-				<p>Hello from the frontend.</p>
-			</div>
-		);
+		return null;
 	};
 
 	// Register block type.

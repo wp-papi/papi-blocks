@@ -27,7 +27,7 @@ final class Papi_Blocks_Loader {
 	 */
 	protected function __construct() {
 		add_action( 'enqueue_block_assets', [$this, 'block_assets'] );
-		add_action( 'enqueue_block_editor_assets', [$this, 'editor_assets'] );
+		add_action( 'init', [$this, 'editor_assets'] );
 
 		// Fires the loaded action.
 		did_action( 'papi/blocks/loaded' ) || do_action( 'papi/blocks/loaded' );
@@ -52,9 +52,9 @@ final class Papi_Blocks_Loader {
 		wp_enqueue_script(
 			'papi-blocks-editor-js',
 			plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ),
-			['wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor'],
+			['wp-blocks', 'wp-i18n', 'wp-element', 'wp-components', 'wp-editor'],
 			// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ),
-			true
+			false // true
 		);
 
 		wp_enqueue_style(
