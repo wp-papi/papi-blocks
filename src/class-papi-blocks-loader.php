@@ -54,7 +54,7 @@ final class Papi_Blocks_Loader {
 			plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ),
 			['wp-blocks', 'wp-i18n', 'wp-element', 'wp-components', 'wp-editor'],
 			// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ),
-			false // true
+			true // true
 		);
 
 		wp_enqueue_style(
